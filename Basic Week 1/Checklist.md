@@ -2,12 +2,12 @@
 
 ## DART
 
-- [ ] Variables
+- [x] Variables
 - [ ] Data types
 - [ ] Collection(List, Set, Map, …)
 - [ ] Function
 - [ ] Operator
-- [ ] Control flow(if, while, …)
+- [x] Control flow(if, while, …)
 - [ ] Exception(throw, catch, …)
 - [ ] Class
 - [ ] Inheritance
