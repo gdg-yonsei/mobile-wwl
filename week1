@@ -1,6 +1,6 @@
 ** Dart Basic week 1 **
 
-// Data types
+// Variables & Data types
 void dataTypes(){
     String a = "Hello World";
     print(a);
@@ -32,31 +32,253 @@ void dataTypes(){
     //dynamic은 한번 정수형으로 선언했어도 새로운 값은 새로운 데이터형으로 대입 가능
     print(j);
     print(k);
+
+    final String name = 'Yoonbin';
+    //final은 값을 선언 후 변경 불가
+
+    const String name2 = 'Cho';
+    //const도 값을 선언 후 변경 불가, 코드를 실행하지 않은 상태에서 값이 확정될 수 있으면 const, 실행 후 확정되면 final을 사용
+
+    enum State{
+        high,
+        middle,
+        low,
+    }
+    print(State.values); // [State.high, State.middle, State.low]
 }
 
-// Variables
-
-
-
 // Collection(List, Set, Map, ...)
+void collectionList(){
+    List<String> GDSC = ['FE', 'BE', 'ML', 'MOBILE', 'DEVREL']; // 중복을 포함, []로 요소 묶어줌
 
+    print(GDSC);
+    print(GDSC[0]);
+    print(GDSC[3]);
 
+    print(GDSC.length);
 
-// Function
+    GDSC[3] = 'best';
+    print(GDSC[3]);
 
+    GDSC.add('Lead'); // .add() 함수로 리스트에 값 추가
+    print(GDSC); 
+
+    final YonseiGDSC = GDSC.where( // .where() 함수로 필터링, 매개변수 필요
+        (part) => part == 'FE' || part == 'BE', // 조건에 true 반환시 유지, false 반환시 값을 버림
+    );
+    print(YonseiGDSC);
+
+    final GDSC2 = GDSC.map( // .map() 함수로 값을 변경
+        (part) => 'Hi $part',
+    );
+    print(GDSC2);
+
+}
+
+void collectionSet(){
+    Set<String> GDSC = {'FE', 'BE', 'ML', 'MOBILE', 'DEVREL', 'FE'}; // Set은 중복 없는 값의 집합, {}로 요소 묶어줌
+
+    print(GDSC);
+    print(GDSC.contains('MOBILE')); // 'MOBILE' 값이 있는지 확인, true/false 반환
+    print(GDSC.toList()); //  리스트로 변환하여 출력
+
+    List<String> GDSC2 = ['FE', 'BE', 'ML', 'ML'];
+    print(Set.from(GDSC2)); // 리스트를 set으로 변환하여 출력
+
+}
+
+void collectionMap(){
+    Map<String, String> dic = {
+        'University' : 'Yonsei', // key : value
+        'Major' : 'SIT',
+        'Name' : 'Yoonbin Cho'
+    };
+
+    print(dic);
+    print(dic['University']); // Yonsei
+    print(dic.keys); // (University, Major, Name)
+    print(dic.values); // (Yonsei, SIT, Yoonbin Cho) <- iterable로 반환되기에 .toList()를 사용해 List 반환도 가능
+
+}
 
 
 // Operator
+void operator(){
+    double number = 10;
 
+    print(number + 3);
+    print(number - 3);
+    print(number * 3);
+    print(number / 3);
+    print(number % 3);
+
+    number++;
+    number--;
+    number += 2;
+    number -= 2;
+    number *= 2;
+    number /= 2;
+
+    //null 연산자
+    double? number2 = 1; // 자료형 뒤 ?는 Null 값을 가질 수 있음, double number2 = null;은 오류발생
+    double? number3; // 자동으로 null값 대입
+    number3 ??= 3; // ?? 사용시 기존 값이 null일 때만 대입 가능, number2 ??= 3;을 실행하면 number2에는 그대로 1이 존재, ??뒤에 띄어쓰기 없이 = 넣기
+
+    //비교연산자
+    int num1 = 10;
+    int num2 = 20;
+
+    print(num1 > num2);
+    print(num1 >= num2);
+    print(num1 == num2);
+    print(num1 != num2);
+
+    //자료형 비교연산자
+    print(num1 is int);
+    print(num1 is String);
+    print(num1 is! int);
+    print(num1 is! String);
+
+    //논리연산자
+    bool result = num1 > num2 && 1 > 0;
+    bool result2 = num1 > num2 || 1 > 0;
+    print(result);
+    print(result2);
+}
 
 
 // Control flow(if, while, ...)
+void control(){
+    //if문
+    int number = 1;
+    
+    if(number %3 == 0){
+        print(number/3);
+    }
+    else if (number %3 == 1){
+        print((number-1)/3);
+    }
+    else{
+        print((number-2)/3);
+    }
 
+    //while문
+    int num = 0;
 
+    while(num < 10){
+        num++;
+    }
+    print(num);
+    num = 0;
+    
+    do{
+        num++;
+    }while(num<10);
+    print(num);
+
+    //for문
+    for(int i = 0; i < 10; i++){
+        print(i);
+    }
+
+    List<int> numList = [1, 3, 6];
+    for(int num2 in numList){
+        print(num2);
+    }
+
+    //switch문
+    String diff = 'high';
+
+    switch(diff){
+        case 'high':
+            print('high value');
+            break;
+        case 'same':
+            print('same value');
+            break;
+        case 'low':
+            print('low value');
+            break;
+        default:
+            print('Error');
+    }
+}
+
+//Function
+    int addNum(int a, int b){
+        return a+b;
+    }
+
+    int addNum2({required int c, required int d}){ // {} 내부에 required로 매개변수 지정시 순서 관계 없이 사용가능
+        return c+d;
+    }
+
+    void main(){
+        print(addNum(1, 5));
+        print(addNum2(c:1, d:5));
+    }
+
+    //lambda 함수
+    void lambda(){
+        List<int> numbers = [1,3,4,5];
+        final allNums = numbers.reduce((value, element){
+            return value + element;
+        });
+        print(allNums);
+
+        final allNums2 = numbers.reduce((value, element) => value + element);
+        print(allNums2);
+    }
+
+    //typedef 함수
+    typedef F = void Function(int a, int b);
+
+    void sum(int a, int b){
+        print('sum : ${a+b}'); // $ 옆에는 중괄호 사용
+    }
+
+    void mul(int a, int b){
+        print('mul : ${a*b}');
+    }
+
+    void cal(int a, int b, F){
+        F(a, b);
+    }
+
+    void main(){
+        cal(2, 3, sum);
+    }
 
 // Exception (throw, catch, ...)
+    // try-catch문은 try와 catch 사이의 코드에 에러가 없으면 정상적으로 실행, 에러가 있으면 catch 이후의 코드를 실행하는 구조이다.
+    void main(){
+        try{
+            // 에러 없을 때 실행할 코드
+            final String name = 'GDSC';
 
+            print(name);
+        }catch(e){
+            // 에러 있을 때 실행할 코드
+            print(e);
+        }
+    }
+    
+    //이때  throw는 에러를 발생시킨다.
+    void main(){
+        try{
+            // 에러 없을 때 실행할 코드
+            final String name = 'GDSC';
+            throw Exception('Error 발생');
 
+            print(name);
+        }catch(e){
+            // 에러 있을 때 실행할 코드
+            print(e); //Exception: Error 발생
+        }
+    }
+
+    // finally{} 내부에는 에러발생여부와 관계없이 실행할 코드를 작성할 수 있다.
+       
 
 // Class
 
@@ -66,4 +288,4 @@ void dataTypes(){
 
 
 
-//Mixins
+// Mixins
