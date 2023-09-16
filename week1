@@ -1,1 +1,69 @@
+** Dart Basic week 1 **
 
+// Data types
+void dataTypes(){
+    String a = "Hello World";
+    print(a);
+
+    int b = 10; 
+    print(b);
+
+    double c = 2.5;
+    print(c);
+
+    num d = 1.5;
+    num e = 100;
+    print(d);
+    print(e);
+    
+    bool f = true;
+    bool g = false;
+    print(f);
+    print(g);
+
+    var h = 10;
+    var i = "hello";
+    //var는 이미 정수형으로 선언했으면 계속 정수형으로 데이터를 대입해야함
+    print(h);
+    print(i);
+
+    dynamic j = 10;
+    dynamic k = "world";
+    //dynamic은 한번 정수형으로 선언했어도 새로운 값은 새로운 데이터형으로 대입 가능
+    print(j);
+    print(k);
+}
+
+// Variables
+
+
+
+// Collection(List, Set, Map, ...)
+
+
+
+// Function
+
+
+
+// Operator
+
+
+
+// Control flow(if, while, ...)
+
+
+
+// Exception (throw, catch, ...)
+
+
+
+// Class
+
+
+
+// Inheritance
+
+
+
+//Mixins
