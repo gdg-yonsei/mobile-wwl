@@ -151,7 +151,10 @@ class Idol {
   }
 }
 ```
-----
+<img width="849" alt="image" src="https://github.com/gdsc-ys/mobile-wwl/assets/85781941/29eb1f95-191b-4aee-9e57-1686c474133b">
+
+- 위와 같이 const로 설정하면 두 개의 인스턴스가 같은 값으로 나온다!
+
 `Getter와 Setter`
 
 ```dart
@@ -463,5 +466,62 @@ class Lecture<T> {
   void printIDType() {
     print(id.runtimeType);
   }
+}
+```
+
+## Mixin
+
+- 멀티 클래스 계층구조에서 사용될 수 있다.
+    - `extends`는 다중상속이 불가능하다.
+- `with` 키워드를 활용한다.
+- Mixin 클래스는 `extends`나 `with`를 활용할 수 없다.
+
+- 아래와 같이 Mixin을 활용해서 행동에대한 클래스를 만들 수 있다.
+
+```swift
+mixin Flyer {
+  void fly() {
+    print('fly');
+  }
+}
+
+mixin Swimmer {
+  void swim() {
+    print('swim');
+  }
+}
+
+mixin Walker {
+  void walk() {
+    print('walk');
+  }
+}
+```
+- 그리고 아래와 같이 with을 통해서 다중 상속을 받을 수 있다.
+
+```swift
+class Musician extends Performer **with** Walker {
+  // ···
+}
+
+class Maestro extends Person **with** Walker, Swimmer, Flyer {
+  Maestro(String maestroName) {
+    name = maestroName;
+    canConduct = true;
+  }
+}
+```
+
+- 그리고 `on` 을 활용해서 특정 class만 상속 받을 수 있게 제한할 수 있다.
+
+```swift
+class Musician {
+  // ...
+}
+mixin MusicalPerformer on Musician {
+  // ...
+}
+class SingerDancer extends Musician with MusicalPerformer {
+  // ...
 }
 ```
