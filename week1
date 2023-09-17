@@ -278,14 +278,53 @@ void control(){
     }
 
     // finally{} 내부에는 에러발생여부와 관계없이 실행할 코드를 작성할 수 있다.
-       
+    void main(){
+        try{
+            // 에러 없을 때 실행할 코드
+            final String name = 'GDSC';
+            throw Exception('Error 발생');
+
+            print(name);
+        }catch(e){
+            // 에러 있을 때 실행할 코드
+            print(e); //Exception: Error 발생
+        }finally{
+            print('-- end --')
+        }
+    }   
 
 // Class
+    class Member{
+        String group = 'GDSC';
+        String name;
+        String part;
+        int age; // class 변수 선언
+        Member(this.name, this.part, this.age);
+        
+        void namecard(){
+            print("my name is $name and I'm in $part part of $group");
+        }
+        void agecard(){
+            print("I'm $age years old.");
+        }
+    }
 
+    void main(){
+        Member M1 = Member('yoonbin', 'Mobile', 21);
+        Member M2 = Member('gildong', 'FE', 24);
 
+        M1.namecard();
+        M2.agecard();
+    }
+
+    // private & public
+
+    // getter & setter
 
 // Inheritance
+    // extend를 사용하여 새로 만들고자하는 class에 기존 존재하는 class를 상속할 수 있다.
 
+    // with을 사용하면 여러 개의 class를 상속받을 수 있다.
 
 
 // Mixins
