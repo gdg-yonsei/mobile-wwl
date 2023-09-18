@@ -9,6 +9,12 @@
 
 import 'dart:math';
 
+class Point2 {
+  final double x, y;
+
+  Point2(this.x, this.y);
+}
+
 class Point {
   double x = 0, y = 0;
 
