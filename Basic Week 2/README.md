@@ -1,4 +1,4 @@
-# Basic Week 1 : Hello Flutter!
+# Basic Week 2 : Basic UI & Packages
 ## Assignment
 - **Basic Widgets**
     > **지난 과제에 이어 플러터의 기본 위젯에 대해 다룹니다. 여기서 언급해드리는 위젯들은 정말 기초적으로 사용되는 위젯들로 앞으로 무조건 사용하게 되실겁니다.**
