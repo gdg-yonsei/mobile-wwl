@@ -1,6 +1,20 @@
 // Flutter Widget
 # Container
 지식을 담는 컨테이너 역할을 함. 배경색, 너비와 높이, 테두리 등의 디자인 지정 가능
+Container(
+    decoration: BoxDecoration(
+        color: Colors.blue, // 박스 배경 색
+        border: Border.all( // 박스 테두리
+            width: 15.0, // 테두리 두께
+            color: Colors.black, // 테두리 색
+        ),
+        borderRadius: BorderRadius.Circular( // 모서리 둥글게
+            15.0,
+        ),
+    ),
+    height: 200.0, // 높이
+    width: 100.0, // 너비
+)
 
 # Text
 글자를 적고 스타일링하는 위젯
@@ -86,14 +100,67 @@ IconButton(
 - SnackBar
 
 
-- SafeArea
-
+# SafeArea
+노치 디자인 같은 디자인을 위해 공간 배치에 예외 적용하기 (페이지 여백과 같은 존재)
+SafeArea(
+    top: true, //  true가 예외 공간 적용하기
+    bottom: true,
+    left: true,
+    right: true,
+    child: Container(
+        color: Colors.red,
+        height: 300.0,
+        width: 300.0,
+    ),
+),
 
 # SizedBox
 높이와 너비를 지정하는 위젯으로, 컨테이너 위젯과 다르게 디자인적 요소는 적용 불가, const 생성자로 선언 가능.
+SizedBox(
+    height: 200.0,
+    width: 200.0,
 
+    child: Container( // SizedBox는 색이 없음. Container를 포함해 색 추가 하기
+        color: Colors.blue,
+    ),
+)
 
-- Padding
+# Padding
+child 위젯에 여백을 제공할 때 사용, padding의 상위 위젯과 하위 위젯 사이에 여백 두기. 매개변수 EdgeInsets 필요. 
 
+Container(
+    color: Colors.blue,
+    child: Padding(
+        padding: EdgeInsets.all( // 상하좌우 모두 16픽셀만큼의 여백
+            16.0,
+        ),
+        child: Container(
+            color: Colors.red,
+            width: 50.0,
+            height: 50.0,
+        ),
+    ),
+)
+// 최종적으로 파란 박스 안에 16픽셀씩 여유를 두고 빨간 박스 생기는 형태의 예제
+
+// margin을 사용하면 외부에 추가하는 방식이 가능
+Container(
+    color: Colors.black,
+    
+    child: Container(
+        color: Colors.blue,
+        margin: EdgeInsets.all(16.0),
+
+        child: Padding(
+            padding: EdgeInsets.all(16.0),
+            
+            child: Container(
+                color: Colors.red,
+                width: 50,
+                height: 50,
+            ),
+        ),
+    ),
+)
 
 - SingleChildScrollView
