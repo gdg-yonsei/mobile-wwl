@@ -1,3 +1,4 @@
+import 'package:disneyplus_clone/presentation/BottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class MainScreen extends StatelessWidget {
         )
       ),
       backgroundColor: const Color(0xff39416f),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }
