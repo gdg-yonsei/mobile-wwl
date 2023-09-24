@@ -13,3 +13,7 @@
 ### 구현
 
 - [x] Splash Screen
+- [ ] App bar with logo
+- [ ] Bottom Nav
+- [ ] Carousel
+- [ ] Franchise List
