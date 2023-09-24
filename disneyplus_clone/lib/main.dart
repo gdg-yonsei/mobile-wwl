@@ -1,6 +1,7 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
+import 'presentation/main_screen.dart';
+import 'presentation/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,48 +14,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Disney+ Clone',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Disney+ Clone')
-      home: const SplashScreen()
+      home: const SplashScreen(nextScreen: MainScreen()),
     );
   }
 }
 
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-        splash: Padding(
-          padding: const EdgeInsets.only(bottom: 200),
-          child: Lottie.asset('assets/lottie/disney_plus.json'),
-        ),
-        nextScreen: const MainPage(),
-        backgroundColor: const Color(0xff131a4a),
-        splashIconSize: 500,
-      );
-  }
-}
-
-
-class MainPage extends StatelessWidget {
-  const MainPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Disney+ Clone'),
-      ),
-      body: const Center(
-        child: Text('Hello World'),
-      ),
-    );
-  }
-}
 
