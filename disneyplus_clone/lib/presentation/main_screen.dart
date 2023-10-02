@@ -31,6 +31,7 @@ class MainScreen extends StatelessWidget {
                     Expanded(child: FranchiseButton(title: "pixar", image: "assets/image/pixar_logo.png")),
                   ],
                 ),
+                SizedBox(height: 8,),
                 Row(
                   children: [
                     Expanded(child: FranchiseButton(title: "national geographic", image: "assets/image/ng_logo.png")),
