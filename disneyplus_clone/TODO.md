@@ -3,17 +3,17 @@
 
 ### 조사
 - [x] Checkout `animated_splash_screen` package
-- [ ] Checkout `carousel_slider` package
-- [ ] Checkout `bottom_navigation_bar` package
-- [ ] Checkout `ListView` widget
-- [ ] Checkout `MediaQuery` widget
+- [x] Checkout `carousel_slider` package
+- [x] Checkout `bottom_navigation_bar` package
+- [x] Checkout `ListView` widget
+- [x] Checkout `MediaQuery` widget
 - [x] Load disneyplus lottiefile to asset
 
 
 ### 구현
 
 - [x] Splash Screen
-- [ ] App bar with logo
-- [ ] Bottom Nav
-- [ ] Carousel
-- [ ] Franchise List
+- [x] App bar with logo
+- [x] Bottom Nav
+- [x] Carousel
+- [x] Franchise List
