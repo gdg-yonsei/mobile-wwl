@@ -18,26 +18,32 @@ class MainScreen extends StatelessWidget {
         )
       ),
       child: Scaffold(
-        appBar: AppBar(
-          title: Image.asset(
-            'assets/image/logo.png',
-            height: 40,
-          ) ,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-        ),
-        body: const SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                MainCarousel(),
-                FranchiseList(),
-                ContentsListSection(title: "픽사 오리지널", images: pixarContents),
-                ContentsListSection(title: "스타워즈", images: starwarsContents),
-                ContentsListSection(title: "한국 드라마", images: koreanContents),
-              ],
-            ),
-          )
+        body: SafeArea(
+          child: NestedScrollView(
+            headerSliverBuilder: (context, innerBoxIsScrolled) {
+              return [
+                SliverAppBar(
+                  backgroundColor: Colors.transparent,
+                  title: Image.asset(
+                    'assets/image/logo.png',
+                    height: 40,
+                  ),
+                  centerTitle: true,
+                ),
+              ];
+            },
+            body: const SingleChildScrollView(
+                child: Column(
+                  children: [
+                    MainCarousel(),
+                    FranchiseList(),
+                    ContentsListSection(title: "픽사 오리지널", images: pixarContents),
+                    ContentsListSection(title: "스타워즈", images: starwarsContents),
+                    ContentsListSection(title: "한국 드라마", images: koreanContents),
+                  ],
+                ),
+              ),
+          ),
         ),
         backgroundColor: Colors.transparent,
         bottomNavigationBar: const CustomBottomNavigationBar(),

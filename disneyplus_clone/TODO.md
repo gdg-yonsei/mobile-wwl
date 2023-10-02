@@ -17,3 +17,4 @@
 - [x] Bottom Nav
 - [x] Carousel
 - [x] Franchise List
+- [ ] Fade App Bar on scroll
