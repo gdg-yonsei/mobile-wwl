@@ -14,6 +14,7 @@ class MainScreen extends StatelessWidget {
           height: 40,
         ),
         backgroundColor: const Color(0xff39416f),
+        centerTitle: true,
       ),
       body: const SafeArea(
         child: Column(
@@ -23,20 +24,21 @@ class MainScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Flexible(child: FranchiseButton(title: "star wars", image: 'assets/image/starwars_logo.png')),
+                    Expanded(child: FranchiseButton(title: "star wars", image: 'assets/image/starwars_logo.png')),
                     SizedBox(width: 10,),
-                    Flexible(child: FranchiseButton(title: "star channel", image: 'assets/image/star_logo.png')),
+                    Expanded(child: FranchiseButton(title: "star channel", image: 'assets/image/star_logo.png')),
                     SizedBox(width: 10,),
-                    Flexible(child: FranchiseButton(title: "pixar", image: "assets/image/pixar_logo.png")),
+                    Expanded(child: FranchiseButton(title: "pixar", image: "assets/image/pixar_logo.png")),
                   ],
                 ),
+                SizedBox(height: 8,),
                 Row(
                   children: [
-                    Flexible(child: FranchiseButton(title: "national geographic", image: "assets/image/ng_logo.png")),
+                    Expanded(child: FranchiseButton(title: "national geographic", image: "assets/image/ng_logo.png")),
                     SizedBox(width: 10,),
-                    Flexible(child: FranchiseButton(title: "marvel", image: 'assets/image/marvel_logo.png')),
+                    Expanded(child: FranchiseButton(title: "marvel", image: 'assets/image/marvel_logo.png')),
                     SizedBox(width: 10,),
-                    Flexible(child: FranchiseButton(title: "disney", image: 'assets/image/disney_white_logo.png'))
+                    Expanded(child: FranchiseButton(title: "disney", image: 'assets/image/disney_white_logo.png'))
                   ],
                 ),
               ],

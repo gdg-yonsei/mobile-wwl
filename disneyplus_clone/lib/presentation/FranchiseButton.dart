@@ -12,19 +12,23 @@ class FranchiseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white,
-          width: 2,
+    return AspectRatio(
+      key: key,
+      aspectRatio: 2,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.white,
+            width: 2,
+          ),
+          borderRadius: BorderRadius.circular(10),
         ),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child:
-      Image.asset(
-        image,
-        fit: BoxFit.fitHeight,
+        child:
+        Image.asset(
+          image,
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
