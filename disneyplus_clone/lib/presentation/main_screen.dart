@@ -1,5 +1,6 @@
-import 'package:disneyplus_clone/presentation/BottomNavigationBar.dart';
-import 'package:disneyplus_clone/presentation/FranchiseButton.dart';
+import 'package:disneyplus_clone/presentation/bottom_navigation_bar.dart';
+import 'package:disneyplus_clone/presentation/franchise_button.dart';
+import 'package:disneyplus_clone/presentation/main_carousel.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class MainScreen extends StatelessWidget {
       body: const SafeArea(
         child: Column(
           children: [
+            MainCarousel(),
             Padding(padding: EdgeInsets.all(20), child: Column(
               // @TODO : Flexible 아닌 방법 혹은 Flexible 쓰면서 더 좋은 방법 찾기
               children: [
