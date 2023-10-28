@@ -25,8 +25,14 @@ style: TextStyle(
     color: Colors.blue, // 글자 색
 )
 
-- Image
+# Image
+// 이미지 파일을 넣고 싶을 때, 넣고 싶은 위치에 해당 코드를 작성한다.
+asset에 이미지들을 넣어놓고 불러오기
 
+Image.assets('assets/images/파일명.확장자')
+
+// 이미지 파일을 인터넷에서 불러올 때는 주소를 적으면 되는데, 인터넷이 될 때만 로드할 수 있다.
+Image.network('이미지url')
 
 # Row/Column
 Column 위젯은 children 매개변수에 입력된 모든 위젯을 세로로 배치
@@ -79,16 +85,47 @@ IconButton(
 )
 
 
-- Stack
+# Stack
+Column/Row가 가로, 세로로 배치하는 위젯이라면, Stack 위젯은 위젯을 겹치는 기능을 제공
+
+Stack(
+    children: [
+        Container(
+            height: 300.0,
+            width: 300.0,
+            color: Colors.red,
+        ),
+
+        Container(
+            height: 250.0,
+            width: 250.0,
+            color: Colors.yellow,
+        ),
+        
+        Container(
+            heigh: 200.0,
+            width: 200.0,
+            color: Colors.blue,
+        ),
+    ],
+),
 
 
-- Appbar
+# Scaffold (appBar, body, bottomNavigationBar)
+주로 상단/중단/하단으로 구성된 레이아웃을 구성하도록 해준다. 상/중/하 세 개의 파라미터는 appBar, body, bottomNavigationBar로 나눌 수 있다. (소괄호 속에서 ctrl space를 누르면 파라미터 확인 가능)
 
+MaterialApp(
+  home: Scaffold(
+    appBar: 상단에 넣을 위젯,
+    body: 중단에 넣을 위젯,
+    bottomNavigationBar: 하단에 넣을 위젯,
+  ),
+);
 
-- Scaffold
+//    appBar: AppBar( title: Text('앱제목') ), 
+//    body: Text('안녕'), 
+//    bottomNavigationBar: BottomAppBar( child: Text('하단바') ),
 
-
-- BottomNavigationBar
 
 
 - Navigator
