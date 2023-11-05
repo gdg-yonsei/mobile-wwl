@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:disneyplus_clone/presentation/thumbnail_button.dart';
+
 class ContentsListSection extends StatelessWidget {
   const ContentsListSection({
     super.key,
@@ -37,13 +39,7 @@ class ContentsListSection extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 scrollDirection: Axis.horizontal,
-                children: images.map((e) => Container(
-                  margin: const EdgeInsets.only(right: 10),
-                  child: Image.network(
-                    e,
-                    fit: BoxFit.fitWidth,
-                  ),
-                )).toList()
+                children: images.map((e) => ThumbnailButton(image: e)).toList()
               ),
             )
           ],

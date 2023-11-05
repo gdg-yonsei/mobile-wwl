@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "619308581123",
+    "project_id": "disneyplusclone-52e54",
+    "storage_bucket": "disneyplusclone-52e54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619308581123:android:39ed1596a33692b8e96936",
+        "android_client_info": {
+          "package_name": "com.example.disneyplus_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAcbC3cFDXoV7hdq6eHG3G8sHVRDYJUrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
