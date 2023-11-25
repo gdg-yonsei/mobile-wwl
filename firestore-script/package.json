@@ -1,0 +1,15 @@
+{
+  "name": "firestore-script",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node main.js"
+  },
+  "dependencies": {
+    "firebase": "^10.5.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'presentation/main_screen.dart';
-import 'presentation/splash_screen.dart';
+import 'firebase_options.dart';
+import 'presentation/screen/main_screen.dart';
+import 'presentation/screen/splash_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -23,5 +29,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

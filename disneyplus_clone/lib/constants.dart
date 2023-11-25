@@ -1,4 +1,3 @@
-
 const List<String> carouselPosters = [
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/8FE73A3917B1AE0AD552FE517A0D568497134E497BD8DB92C091A25BBCD3FC51/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal", // loki
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A8087978F49D5E75C74DA8A7BD4976E3E978D3D29306EFABCDEA81CB59F9245F/badging?width=800&aspectRatio=NaN&format=jpeg&label=staroriginal", // 무빙
@@ -6,19 +5,17 @@ const List<String> carouselPosters = [
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D9F5661A2E9712A068A24EBB57CF5FD2D0790E60A0E70E40E3E6FD2C74BBDE95/badging?width=800&aspectRatio=1.78&format=jpeg&label=staroriginal", // Kardashians
 ];
 
-
 const List<String> starwarsContents = [
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9A85EBE866FABC430842353A53826BACC8C73693AA4545301EEEFB11D70B7D22/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/2C9B395B8F7F779200845632F43641A91D09FE3BCE944552DFB8A7751CC5F032/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/3F815B84EEFE7B4C8BC75C9EEE1ED7E314010543ADDCB11839B3BB5834208837/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F79F70672C7D5F6B6AA60052B8C89FC8AABA6C360641A5D02B7909B375539870/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
-
 ];
 
 const List<String> pixarContents = [
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F79F70672C7D5F6B6AA60052B8C89FC8AABA6C360641A5D02B7909B375539870/badging?width=800&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal",
   "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0E98A686D1E39B858124FA5FDC4EC20F6B8E6DD4AB361D92C3C5213CCE955625/scale?width=800&aspectRatio=1.78&format=jpeg",
-  "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0E98A686D1E39B858124FA5FDC4EC20F6B8E6DD4AB361D92C3C5213CCE955625/scale?width=800&aspectRatio=1.78&format=jpeg" ,
+  "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0E98A686D1E39B858124FA5FDC4EC20F6B8E6DD4AB361D92C3C5213CCE955625/scale?width=800&aspectRatio=1.78&format=jpeg",
 ];
 
 const List<String> koreanContents = [

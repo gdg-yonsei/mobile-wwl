@@ -1,0 +1,36 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/21.1.0/bin/node /Users/antares/Documents/GitHub/mobile-wwl/firestore-script/.yarn/releases/yarn-1.22.19.cjs init
+
+PATH: 
+  /Users/antares/.rbenv/shims:/opt/homebrew/opt/sdkman-cli/libexec/candidates/java/current/bin:/opt/homebrew/opt/make/libexec/gnubin:/Users/antares/Library/flutter/bin:/Users/antares/.local/bin:/Users/antares/go/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Applications/VMware Fusion.app/Contents/Public:/Users/antares/.ebcli-virtual-env/executables:/Users/antares/Library/Application Support/JetBrains/Toolbox/scripts:/Users/antares/Library/Android/sdk/tools:/Users/antares/Library/Android/sdk/tools/bin:/Users/antares/Library/Android/sdk/platform-tools:/Users/antares/.pub-cache/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  21.1.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/Users/antares/Documents/GitHub/mobile-wwl/firestore-script/.yarn/releases/yarn-1.22.19.cjs:131557:13)
+      at Interface.emit (node:events:515:28)
+      at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1125:18)
+      at ReadStream.onkeypress (node:internal/readline/interface:264:20)
+      at ReadStream.emit (node:events:515:28)
+      at emitKeys (node:internal/readline/utils:371:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+      at ReadStream.emit (node:events:515:28)
+      at addChunk (node:internal/streams/readable:545:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
