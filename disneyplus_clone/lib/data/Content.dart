@@ -1,8 +1,6 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Content {
-
   final String titleImage;
   final String titleText;
   final String description;
@@ -40,9 +38,9 @@ class Content {
   }
 
   factory Content.fromFirestore(
-      DocumentSnapshot<Map<String, dynamic>> snapshot,
-      SnapshotOptions? options,
-      ) {
+    DocumentSnapshot<Map<String, dynamic>> snapshot,
+    SnapshotOptions? options,
+  ) {
     final data = snapshot.data();
     return Content(
       titleImage: data?['title_image'],
@@ -56,20 +54,18 @@ class Content {
       // genre: data?['genre'],
     );
   }
-
 }
 
 Future<List<Content>> getContents() async {
-  final contents = await FirebaseFirestore.instance
-      .collection('contents')
-      .get();
+  final contents =
+      await FirebaseFirestore.instance.collection('contents').get();
   return contents.docs.map((e) => Content.fromFirestore(e, null)).toList();
 }
 
 Future<Content> fetchContent() async {
   final response = await FirebaseFirestore.instance
       .collection('contents')
-      .doc('R8Nwp9mpUqz99fbaoxS1')
+      .doc('JMSYV3BljtddojtrX8fk')
       .get();
 
   return Content.fromFirestore(response, null);

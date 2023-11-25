@@ -1,4 +1,4 @@
-import 'package:disneyplus_clone/presentation/detail_screen.dart';
+import 'package:disneyplus_clone/presentation/screen/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class ThumbnailButton extends StatelessWidget {

@@ -24,8 +24,7 @@ class FranchiseButton extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        child:
-        Image.asset(
+        child: Image.asset(
           image,
           fit: BoxFit.contain,
         ),
