@@ -1,5 +1,7 @@
+import 'package:disneyplus_clone/provider/downloaded_content_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class ContentActionRow extends StatelessWidget {
   const ContentActionRow({
@@ -17,7 +19,7 @@ class ContentActionRow extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           onPressed: () => print('pressed'),
-          child: Column(
+          child: const Column(
             children: [
               Icon(Icons.add),
               SizedBox(
@@ -30,7 +32,7 @@ class ContentActionRow extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         TextButton(
@@ -39,7 +41,7 @@ class ContentActionRow extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           onPressed: () => print('pressed'),
-          child: Column(
+          child: const Column(
             children: [
               Icon(Icons.local_movies),
               SizedBox(
@@ -52,28 +54,44 @@ class ContentActionRow extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
-        TextButton(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.grey,
-            backgroundColor: Colors.transparent,
-          ),
-          onPressed: () => print('pressed'),
-          child: Column(
-            children: [
-              Icon(Icons.file_download),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                "저장",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
+        Consumer<DownloadedContentsProvider>(
+            builder: (context, provider, child) {
+          final contentId =
+              GoRouterState.of(context).pathParameters['contentId'];
+
+          final isDownloaded = provider.isDownloaded(contentId!);
+
+          return TextButton(
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.grey,
+              backgroundColor: Colors.transparent,
+            ),
+            onPressed: () {
+              if (isDownloaded) {
+                provider.removeDownloadedContent(contentId);
+              } else {
+                provider.addDownloadedContent(contentId);
+              }
+            },
+            child: Column(
+              children: [
+                Icon(isDownloaded
+                    ? Icons.file_download_done
+                    : Icons.file_download),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  "저장",
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          );
+        }),
       ],
     );
   }

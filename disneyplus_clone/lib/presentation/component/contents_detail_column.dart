@@ -29,10 +29,10 @@ class ContentsDetailsColumn extends StatelessWidget {
           height: 400,
         ),
         ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: 100, maxWidth: 240),
+          constraints: const BoxConstraints(maxHeight: 100, maxWidth: 240),
           child: AspectRatio(
               aspectRatio: 1.78,
-              child: Container(
+              child: SizedBox(
                 height: 300,
                 width: 300,
                 child: Image.network(data.titleImage, fit: BoxFit.cover),
@@ -40,24 +40,24 @@ class ContentsDetailsColumn extends StatelessWidget {
         ),
         Text(
           "${data.year} • ${data.runningTime}분",
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
         ),
         // Text("${data.genre.join(", ")}", style: TextStyle(color: Colors.grey, fontSize: 14),),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white, // background (button) color
             foregroundColor: Colors.black, // foreground (text) color
-            minimumSize: Size.fromHeight(48),
+            minimumSize: const Size.fromHeight(48),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
             ),
           ),
           onPressed: () => launchUrl(Uri.parse(data.teaserUrl)),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             verticalDirection: VerticalDirection.up,
             children: [
@@ -69,16 +69,16 @@ class ContentsDetailsColumn extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
-        ContentActionRow(),
-        SizedBox(
+        const ContentActionRow(),
+        const SizedBox(
           height: 10,
         ),
         Text(
           data.description,
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: const TextStyle(color: Colors.white, fontSize: 16),
         )
       ],
     );
