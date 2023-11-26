@@ -11,13 +11,16 @@ class ThumbnailButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const contentId = 'JMSYV3BljtddojtrX8fk';
+
     return MaterialButton(
       padding: const EdgeInsets.only(right: 10),
       child: Image.network(
         image,
         fit: BoxFit.fitWidth,
       ),
-      onPressed: () => GoRouter.of(context).go('/content'),
+      onPressed: () => GoRouter.of(context)
+          .goNamed('content', pathParameters: {'contentId': contentId}),
     );
   }
 }

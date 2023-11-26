@@ -1,4 +1,4 @@
-import 'package:disneyplus_clone/presentation/screen/detail_screen.dart';
+import 'package:disneyplus_clone/presentation/screen/content_screen.dart';
 import 'package:disneyplus_clone/presentation/screen/download_screen.dart';
 import 'package:disneyplus_clone/presentation/screen/main_screen.dart';
 import 'package:disneyplus_clone/presentation/screen/profile_screen.dart';
@@ -39,9 +39,13 @@ var router = GoRouter(
                 builder: (context, state) => const MainScreen(),
                 routes: <RouteBase>[
                   GoRoute(
-                      path: 'content',
+                      name: 'content',
+                      path: 'content/:contentId',
                       parentNavigatorKey: _rootNavigatorKey,
-                      builder: (context, state) => const DetailScreen())
+                      builder: (BuildContext context, GoRouterState state) =>
+                          ContentScreen(
+                            contentId: state.pathParameters['contentId']!,
+                          ))
                 ]),
             GoRoute(
                 path: '/search',

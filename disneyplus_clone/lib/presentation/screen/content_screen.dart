@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../page/detail_page.dart';
 
-class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+class ContentScreen extends StatelessWidget {
+  final String contentId;
+
+  const ContentScreen({super.key, required this.contentId});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,8 @@ class DetailScreen extends StatelessWidget {
         image: AssetImage('assets/image/background.png'),
         fit: BoxFit.cover,
       )),
-      child: const Scaffold(
-        body: DetailPage(),
+      child: Scaffold(
+        body: ContentPage(contentId: contentId),
         backgroundColor: Colors.transparent,
       ),
     );

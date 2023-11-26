@@ -62,11 +62,9 @@ Future<List<Content>> getContents() async {
   return contents.docs.map((e) => Content.fromFirestore(e, null)).toList();
 }
 
-Future<Content> fetchContent() async {
-  final response = await FirebaseFirestore.instance
-      .collection('contents')
-      .doc('JMSYV3BljtddojtrX8fk')
-      .get();
+Future<Content> fetchContent(String id) async {
+  final response =
+      await FirebaseFirestore.instance.collection('contents').doc(id).get();
 
   return Content.fromFirestore(response, null);
 }

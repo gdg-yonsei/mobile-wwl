@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../../data/Content.dart';
+import '../../data/content.dart';
 import '../component/contents_detail_column.dart';
 
-class DetailPage extends StatefulWidget {
-  const DetailPage({
+class ContentPage extends StatefulWidget {
+  final String contentId;
+
+  const ContentPage({
     super.key,
+    required this.contentId,
   });
 
   @override
-  State<DetailPage> createState() => _DetailPageState();
+  State<ContentPage> createState() => _ContentPageState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _ContentPageState extends State<ContentPage> {
   late Future<Content> futureContent;
 
   @override
   void initState() {
     super.initState();
-    futureContent = fetchContent();
-    // print(futureContent);
     setState(() {
-      futureContent = fetchContent();
+      futureContent = fetchContent(widget.contentId);
     });
   }
 
@@ -29,18 +30,16 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: FutureBuilder<Content>(
           future: futureContent,
           builder: (context, snapshot) {
-            print(snapshot.hasData);
-
             if (snapshot.hasData) {
               return ContentsDetailsColumn(data: snapshot.data!);
             } else if (snapshot.hasError) {
               return Text("${snapshot.error}");
             }
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           },
         ),
       ),

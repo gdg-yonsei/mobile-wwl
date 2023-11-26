@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../data/Content.dart';
+import '../../data/content.dart';
 import 'content_action_row.dart';
 
 class ContentsDetailsColumn extends StatelessWidget {
