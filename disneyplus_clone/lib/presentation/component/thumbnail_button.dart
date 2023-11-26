@@ -1,5 +1,5 @@
-import 'package:disneyplus_clone/presentation/screen/detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ThumbnailButton extends StatelessWidget {
   const ThumbnailButton({
@@ -17,11 +17,7 @@ class ThumbnailButton extends StatelessWidget {
         image,
         fit: BoxFit.fitWidth,
       ),
-      onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetailScreen();
-        }));
-      },
+      onPressed: () => GoRouter.of(context).go('/content'),
     );
   }
 }
