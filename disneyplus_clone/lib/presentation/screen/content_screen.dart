@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../page/detail_page.dart';
+import '../page/content_page.dart';
 
 class ContentScreen extends StatelessWidget {
   final String contentId;
