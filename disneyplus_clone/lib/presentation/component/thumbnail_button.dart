@@ -5,14 +5,14 @@ class ThumbnailButton extends StatelessWidget {
   const ThumbnailButton({
     super.key,
     required this.image,
+    required this.contentId,
   });
 
   final String image;
+  final String contentId;
 
   @override
   Widget build(BuildContext context) {
-    const contentId = 'JMSYV3BljtddojtrX8fk';
-
     return MaterialButton(
       padding: const EdgeInsets.only(right: 10),
       child: Image.network(

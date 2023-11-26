@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Content {
+  late final String id;
+
   final String titleImage;
   final String titleText;
   final String description;
@@ -59,23 +61,33 @@ class Content {
 Future<List<Content>> getContents() async {
   final contents =
       await FirebaseFirestore.instance.collection('contents').get();
-  return contents.docs.map((e) => Content.fromFirestore(e, null)).toList();
+  return contents.docs.map((e) {
+    final model = Content.fromFirestore(e, null);
+    model.id = e.id;
+    return model;
+  }).toList();
 }
 
 Future<Content> fetchContent(String id) async {
   final response =
       await FirebaseFirestore.instance.collection('contents').doc(id).get();
 
-  return Content.fromFirestore(response, null);
+  final model = Content.fromFirestore(response, null);
+  model.id = id;
+  return model;
 }
 
-Future<Content> fetchContentsByGenre(String genre) async {
+Future<List<Content>> fetchContentsByGenre(String genre) async {
   final response = await FirebaseFirestore.instance
       .collection('contents')
       .where('genre', arrayContains: genre)
       .get();
 
-  return Content.fromFirestore(response.docs.first, null);
+  return response.docs.map((e) {
+    final model = Content.fromFirestore(e, null);
+    model.id = e.id;
+    return model;
+  }).toList();
 }
 
 

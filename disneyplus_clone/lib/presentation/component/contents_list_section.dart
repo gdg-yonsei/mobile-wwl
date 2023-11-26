@@ -1,16 +1,32 @@
+import 'package:disneyplus_clone/data/content.dart';
 import 'package:flutter/material.dart';
 
 import 'package:disneyplus_clone/presentation/component/thumbnail_button.dart';
 
-class ContentsListSection extends StatelessWidget {
+class ContentsListSection extends StatefulWidget {
   const ContentsListSection({
     super.key,
     required this.title,
-    required this.images,
+    required this.genre,
   });
 
   final String title;
-  final List<String> images;
+  final String genre;
+
+  @override
+  State<ContentsListSection> createState() => _ContentsListSectionState();
+}
+
+class _ContentsListSectionState extends State<ContentsListSection> {
+  late Future<List<Content>> contents;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      contents = fetchContentsByGenre(widget.genre);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +38,7 @@ class ContentsListSection extends StatelessWidget {
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
             child: Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -34,11 +50,23 @@ class ContentsListSection extends StatelessWidget {
             height: 100,
             width: MediaQuery.of(context).size.width,
             // color: Colors.black,
-            child: ListView(
-                padding: const EdgeInsets.all(8),
-                scrollDirection: Axis.horizontal,
-                children:
-                    images.map((e) => ThumbnailButton(image: e)).toList()),
+            child: FutureBuilder(
+                future: contents,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView(
+                        padding: const EdgeInsets.all(8),
+                        scrollDirection: Axis.horizontal,
+                        children: snapshot.data!
+                            .map((e) => ThumbnailButton(
+                                  image: e.posterCarousel,
+                                  contentId: e.id,
+                                ))
+                            .toList());
+                  } else {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                }),
           )
         ],
       ),
