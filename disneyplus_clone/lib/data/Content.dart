@@ -68,6 +68,19 @@ Future<Content> fetchContent(String id) async {
 
   return Content.fromFirestore(response, null);
 }
+
+Future<Content> fetchContentsByGenre(String genre) async {
+  final response = await FirebaseFirestore.instance
+      .collection('contents')
+      .where('genre', arrayContains: genre)
+      .get();
+
+  return Content.fromFirestore(response.docs.first, null);
+}
+
+
+
+
 // ford v ferrari
 // JMSYV3BljtddojtrX8fk
 

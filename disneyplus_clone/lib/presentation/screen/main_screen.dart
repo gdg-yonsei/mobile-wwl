@@ -1,4 +1,3 @@
-import 'package:disneyplus_clone/presentation/component/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../page/main_page.dart';
